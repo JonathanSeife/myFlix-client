@@ -1,47 +1,59 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { CardGroup, Button, Card } from "react-bootstrap";
 
 export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImagePath} />
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-        <div className="movie-genre-name">
-          <span className="label">Genre: </span>
-          <span className="value">{movie.Genre.Name}</span>
-        </div>
-        <div className="movie-genre-description">
-          <span className="label">Genre description: </span>
-          <span className="value">{movie.Genre.Description}</span>
-        </div>
-        <div className="movie-director-bio">
-          <span className="label">Director Bio: </span>
-          <span className="value">{movie.Director.Bio}</span>
-        </div>
-        <div className="movie-director-born">
-          <span className="label">Director Born: </span>
-          <span className="value">{movie.Director.Born}</span>
-        </div>
-        <button
-          onClick={() => {
-            onBackClick(null);
-          }}
-        >
-          Back
-        </button>
-      </div>
+      <Card class="card bg-light mb-3">
+        <Card.Header className="text-center" as="h3">
+          {movie.Title}
+        </Card.Header>
+        <CardGroup>
+          <Card bg="light" border="dark" text="dark">
+            <Card.Body className="movie-textarea">
+              <div className="movie-poster">
+                <img src={movie.ImagePath} />
+              </div>
+              <div className="movie-title">
+                <span className="label">Title: </span>
+                <span className="value">{movie.Title}</span>
+              </div>
+              <div className="movie-description">
+                <span className="label">Description: </span>
+                <span className="value">{movie.Description}</span>
+              </div>
+              <div className="movie-genre-name">
+                <span className="label">Genre: </span>
+                <span className="value">{movie.Genre.Name}</span>
+              </div>
+              <div className="movie-genre-description">
+                <span className="label">Genre description: </span>
+                <span className="value">{movie.Genre.Description}</span>
+              </div>
+              <div className="movie-director-bio">
+                <span className="label">Director Bio: </span>
+                <span className="value">{movie.Director.Bio}</span>
+              </div>
+              <div className="movie-director-born">
+                <span className="label">Director Born: </span>
+                <span className="value">{movie.Director.Born}</span>
+              </div>
+            </Card.Body>
+          </Card>
+        </CardGroup>
+        <Card.Footer className="text-right">
+          <Button
+            onClick={() => {
+              onBackClick(null);
+            }}
+          >
+            Back
+          </Button>
+        </Card.Footer>
+      </Card>
     );
   }
 }
