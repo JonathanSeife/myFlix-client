@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import PropTypes from "prop-types";
 import {
   Form,
@@ -16,12 +17,60 @@ export function RegistrationView(props) {
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
+  const [usernameErr, setUsernameErr] = useState("");
+  const [passwordErr, setPasswordErr] = useState("");
+  const [emailErr, setEmailErr] = useState("");
+  const [birthdayErr, setBirthdayErr] = useState("");
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr("Username is required");
+      isReq = false;
+    } else if (username.length < 4) {
+      setUsernameErr("Username must be at least 4 characters long");
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr("Password is required");
+      isReq = false;
+    } else if (password.length < 6) {
+      setPasswordErr("Password must be at least 6 characters long");
+      isReq = false;
+    }
+    if (!email) {
+      setEmailErr("Email required");
+      isReq = false;
+    } else if (email.indexOf("@") === -1) {
+      setEmailErr("A valid email address is required");
+      isReq = false;
+    }
+
+    return isReq;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
-    /* Send a request to the server for authentication */
-    /* then call props on registored user(username) */
-    props.onRegistration(username);
+    const isReq = validate();
+    if (isReq) {
+      axios
+        .post("https://seife-myflix.herokuapp.com/users", {
+          Username: username,
+          Password: password,
+          Email: email,
+          Birthday: birthday,
+        })
+        .then((response) => {
+          const data = response.data;
+          console.log(data);
+          alert("Registration sucessful! Please login.");
+          window.open("/", "_self");
+        })
+        .catch((e) => {
+          console.error(e);
+          alert("Registration failed");
+        });
+    }
   };
 
   return (
@@ -44,6 +93,7 @@ export function RegistrationView(props) {
                       required
                       placeholder="Enter a Username"
                     />
+                    {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
 
                   <Form.Group>
@@ -56,6 +106,7 @@ export function RegistrationView(props) {
                       minLength="8"
                       required
                     />
+                    {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
                   <Form.Group>
                     <Form.Label>Email:</Form.Label>
@@ -66,6 +117,7 @@ export function RegistrationView(props) {
                       required
                       placeholder="Enter your Email address"
                     />
+                    {emailErr && <p>{emailErr}</p>}
                   </Form.Group>
                   <Form.Group>
                     <Form.Label>Birthdate:</Form.Label>
@@ -76,6 +128,7 @@ export function RegistrationView(props) {
                       required
                       placeholder="Enter your Birthdate"
                     />
+                    {birthdayErr && <p>{birthdayErr}</p>}
                   </Form.Group>
                   <Button type="submit" onClick={handleSubmit}>
                     Submit
@@ -90,6 +143,4 @@ export function RegistrationView(props) {
   );
 }
 
-RegistrationView.propTypes = {
-  onRegistration: PropTypes.func.isRequired,
-};
+RegistrationView.propTypes = {};

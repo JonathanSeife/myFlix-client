@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { CardGroup, Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export class MovieView extends React.Component {
   render() {
@@ -10,6 +11,14 @@ export class MovieView extends React.Component {
       <Card class="card bg-light mb-3">
         <Card.Header className="text-center" as="h3">
           {movie.Title}
+          <Button
+            className="button-add-favorite-moview-view"
+            size="sm"
+            type="button"
+            onClick={() => addFavorite(movie._id)}
+          >
+            Add to favorites
+          </Button>
         </Card.Header>
         <CardGroup>
           <Card bg="light" border="dark" text="dark">
@@ -47,7 +56,7 @@ export class MovieView extends React.Component {
         <Card.Footer className="text-right">
           <Button
             onClick={() => {
-              onBackClick(null);
+              onBackClick();
             }}
           >
             Back
@@ -71,5 +80,5 @@ MovieView.propTypes = {
       Description: PropTypes.string.isRequired,
     }),
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired,
+  onBackClick: PropTypes.func.isRequired,
 };
