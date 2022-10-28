@@ -4,12 +4,12 @@ import { CardGroup, Button, Card, Col } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
-export default class DirectorView extends React.Component {
+export class DirectorView extends React.Component {
   render() {
     const { movies, director, onBackClick } = this.props;
 
     return (
-      <Card bg="dark" text="light">
+      <Card bg="light" text="dark">
         <Card.Header className="text-center" as="h3">
           {director.Name}
         </Card.Header>
@@ -17,11 +17,11 @@ export default class DirectorView extends React.Component {
           <Card bg="light" border="dark" text="dark">
             <div className="movie-director-bio">
               <span className="label">Director Bio: </span>
-              <span className="value">{movie.Director.Bio}</span>
+              <span className="value">{director.Bio}</span>
             </div>
             <div className="movie-director-born">
               <span className="label">Director Born: </span>
-              <span className="value">{movie.Director.Born}</span>
+              <span className="value">{director.Born}</span>
             </div>
             <CardGroup className="card-group-director-mini-cards">
               {movies.map((m) => (

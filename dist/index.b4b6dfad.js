@@ -27180,7 +27180,7 @@ class MainView extends (0, _reactDefault.default).Component {
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             exact: true,
                             path: "/",
-                            render: ()=>{
+                            render: ({ history  })=>{
                                 if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
                                         movies: movies,
@@ -27193,7 +27193,8 @@ class MainView extends (0, _reactDefault.default).Component {
                                 return movies.map((m)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                         md: 3,
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                            movie: m
+                                            movie: m,
+                                            onBackClick: ()=>history.goBack()
                                         }, void 0, false, void 0, void 0)
                                     }, m._id, false, void 0, void 0));
                             }
@@ -27266,7 +27267,7 @@ class MainView extends (0, _reactDefault.default).Component {
                                     md: 8,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
                                         movie: movies.find((m)=>m._id === match.params.movieId),
-                                        addFavorite: this.addFavorite.bind(this),
+                                        //addFavorite={this.addFavorite.bind(this)}
                                         onBackClick: ()=>history.goBack()
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0);
@@ -40822,7 +40823,7 @@ class MovieView extends (0, _reactDefault.default).Component {
     render() {
         const { movie , onBackClick  } = this.props;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-            class: "card bg-light mb-3",
+            className: "card bg-light mb-3",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Header, {
                     className: "text-center",
@@ -41412,6 +41413,7 @@ $parcel$ReactRefreshHelpers$377f.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreView", ()=>GenreView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -41424,8 +41426,8 @@ class GenreView extends (0, _reactDefault.default).Component {
     render() {
         const { movies , genre , onBackClick  } = this.props;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-            bg: "dark",
-            text: "light",
+            bg: "light",
+            text: "dark",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Header, {
                     className: "text-center",
@@ -41439,9 +41441,9 @@ class GenreView extends (0, _reactDefault.default).Component {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                     className: "genre-textarea",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-                        bg: "dark",
+                        bg: "light",
                         border: "dark",
-                        text: "light",
+                        text: "dark",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "movie-genre-name",
@@ -41456,7 +41458,7 @@ class GenreView extends (0, _reactDefault.default).Component {
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "value",
-                                        children: movie.Genre.Name
+                                        children: genre.Name
                                     }, void 0, false, {
                                         fileName: "src/components/genre-view/genre-view.jsx",
                                         lineNumber: 21,
@@ -41481,7 +41483,7 @@ class GenreView extends (0, _reactDefault.default).Component {
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "value",
-                                        children: movie.Genre.Description
+                                        children: genre.Description
                                     }, void 0, false, {
                                         fileName: "src/components/genre-view/genre-view.jsx",
                                         lineNumber: 25,
@@ -41587,7 +41589,6 @@ class GenreView extends (0, _reactDefault.default).Component {
         }, this);
     }
 }
-exports.default = GenreView;
 GenreView.propTypes = {
     movies: (0, _propTypesDefault.default).array.isRequired,
     genre: (0, _propTypesDefault.default).shape({
@@ -41611,6 +41612,7 @@ $parcel$ReactRefreshHelpers$ad4a.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DirectorView", ()=>DirectorView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -41622,8 +41624,8 @@ class DirectorView extends (0, _reactDefault.default).Component {
     render() {
         const { movies , director , onBackClick  } = this.props;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-            bg: "dark",
-            text: "light",
+            bg: "light",
+            text: "dark",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Header, {
                     className: "text-center",
@@ -41654,7 +41656,7 @@ class DirectorView extends (0, _reactDefault.default).Component {
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "value",
-                                        children: movie.Director.Bio
+                                        children: director.Bio
                                     }, void 0, false, {
                                         fileName: "src/components/director-view/director-view.jsx",
                                         lineNumber: 20,
@@ -41679,7 +41681,7 @@ class DirectorView extends (0, _reactDefault.default).Component {
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "value",
-                                        children: movie.Director.Born
+                                        children: director.Born
                                     }, void 0, false, {
                                         fileName: "src/components/director-view/director-view.jsx",
                                         lineNumber: 24,
@@ -41785,7 +41787,6 @@ class DirectorView extends (0, _reactDefault.default).Component {
         }, this);
     }
 }
-exports.default = DirectorView;
 DirectorView.propTypes = {
     movies: (0, _propTypesDefault.default).array.isRequired,
     director: (0, _propTypesDefault.default).shape({
@@ -41801,7 +41802,7 @@ DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"cHIiW"}],"bNPgg":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNPgg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8fd2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

@@ -83,7 +83,7 @@ export class MainView extends React.Component {
           <Route
             exact
             path="/"
-            render={() => {
+            render={({ history }) => {
               if (!user)
                 return (
                   <Col>
@@ -96,7 +96,7 @@ export class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />;
               return movies.map((m) => (
                 <Col md={3} key={m._id}>
-                  <MovieCard movie={m} />
+                  <MovieCard movie={m} onBackClick={() => history.goBack()} />
                 </Col>
               ));
             }}
@@ -159,7 +159,7 @@ export class MainView extends React.Component {
                 <Col md={8}>
                   <MovieView
                     movie={movies.find((m) => m._id === match.params.movieId)}
-                    addFavorite={this.addFavorite.bind(this)}
+                    //addFavorite={this.addFavorite.bind(this)}
                     onBackClick={() => history.goBack()}
                   />
                 </Col>

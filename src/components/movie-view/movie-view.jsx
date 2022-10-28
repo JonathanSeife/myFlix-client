@@ -8,7 +8,7 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <Card class="card bg-light mb-3">
+      <Card className="card bg-light mb-3">
         <Card.Header className="text-center" as="h3">
           {movie.Title}
           <Button

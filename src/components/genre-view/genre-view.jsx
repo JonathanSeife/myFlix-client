@@ -5,24 +5,24 @@ import { CardGroup, Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "./genre-view.scss";
-export default class GenreView extends React.Component {
+export class GenreView extends React.Component {
   render() {
     const { movies, genre, onBackClick } = this.props;
 
     return (
-      <Card bg="dark" text="light">
+      <Card bg="light" text="dark">
         <Card.Header className="text-center" as="h3">
           {genre.Name}
         </Card.Header>
         <Card.Body className="genre-textarea">
-          <Card bg="dark" border="dark" text="light">
+          <Card bg="light" border="dark" text="dark">
             <div className="movie-genre-name">
               <span className="label">Genre: </span>
-              <span className="value">{movie.Genre.Name}</span>
+              <span className="value">{genre.Name}</span>
             </div>
             <div className="movie-genre-description">
               <span className="label">Genre description: </span>
-              <span className="value">{movie.Genre.Description}</span>
+              <span className="value">{genre.Description}</span>
             </div>
             <CardGroup className="card-group-genre-mini-cards">
               {movies.map((m) => (
