@@ -1,0 +1,50 @@
+.main-view {
+  padding: 40px 0;
+}
+
+.movie-card {
+  padding-bottom: 25px;
+  display: flex;
+}
+
+.card-title {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.card-title {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.card-group-director-mini-cards {
+  margin-top: 10px;
+}
+
+.genre-name, .genre-description {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn-space {
+  margin-top: 15px;
+}
+
+.card-group-director-mini-cards {
+  margin-top: 10px;
+}
+
+.label-director, .label-born {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+img {
+  width: 250px;
+}
+
+/*# sourceMappingURL=index.2b25e0b4.css.map */

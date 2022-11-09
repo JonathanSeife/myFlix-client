@@ -1,0 +1,106 @@
+.login-form {
+  max-width: 450px;
+  margin: auto;
+}
+
+.login-header {
+  padding-top: 20px;
+}
+
+body {
+  background-color: #d3d3d3 !important;
+}
+
+.card-top {
+  margin-top: 25px;
+  position: absolute;
+}
+
+.card-title {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.movie-title, .movie-description, .genre-name, .genre-description, .director-bio, .director-born {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+body {
+  background-color: #d3d3d3 !important;
+}
+
+.main-view {
+  padding: 40px 0;
+}
+
+.movie-card {
+  padding-bottom: 30px;
+  display: flex;
+}
+
+.card-title {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.card-top {
+  margin-top: 25px;
+  position: absolute;
+}
+
+.card-title {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.genre-movie-mini-cards {
+  margin-top: 10px;
+}
+
+.genre-name, .genre-description {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn-space {
+  margin-top: 15px;
+}
+
+.card-top {
+  margin-top: 25px;
+  position: absolute;
+}
+
+.card-title {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.card-group-director-mini-cards {
+  margin-top: 10px;
+}
+
+.label-director, .label-born {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-title {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.navbar-brand {
+  font-size: 30px !important;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+img {
+  width: 250px;
+}
+
+/*# sourceMappingURL=index.27d8da6b.css.map */
