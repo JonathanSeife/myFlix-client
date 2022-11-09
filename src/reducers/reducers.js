@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import {
-  SET_MOVIES,
   SET_FILTER,
+  SET_MOVIES,
   SET_USER,
   UPDATE_USER,
   DELETE_USER,

@@ -13,14 +13,45 @@ export function LoginView(props) {
   const [usernameErr, setUsernameErr] = useState("");
   const [passwordErr, setPasswordErr] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(username, password);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username);
+  const validate = () => {
+    setUsernameErr(false);
+    setPasswordErr(false);
+    let isReq = true;
+    if (!username) {
+      setUsernameErr("Username required.");
+      isReq = false;
+    } else if (username.length < 4) {
+      setUsernameErr("Username must be at least 5 characters long.");
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr("Password required.");
+      isReq = false;
+    } else if (password.length < 8) {
+      setPasswordErr("Password must be at least 8 characters long.");
+      isReq = false;
+    }
+    return isReq;
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const isReq = validate();
+    if (isReq) {
+      axios
+        .post("https://seife-myflix.herokuapp.com/login", {
+          Username: username,
+          Password: password,
+        })
+        .then((response) => {
+          const data = response.data;
+          props.onLoggedIn(data);
+        })
+        .catch((e) => {
+          console.log("User doesn't exist.");
+        });
+    }
+  };
   return (
     <>
       <Form className="login-form">

@@ -9,7 +9,6 @@ import {
   setMovies,
   setUser,
   setFavorite,
-  setFilter,
   deleteFavorite,
 } from "../../actions/actions";
 
@@ -33,7 +32,6 @@ class MainView extends React.Component {
       user: null,
     };
   }
-
   componentDidMount() {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
@@ -57,15 +55,33 @@ class MainView extends React.Component {
         console.log(error);
       });
   }
-  /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
+
+  getUser(token) {
+    const user = localStorage.getItem("user");
+    axios
+      .get(`https://seife-myflix.herokuapp.com/users/${user}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        this.props.setUser(response.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }
 
   onLoggedIn(authData) {
-    this.props.setUser(authData.user);
+    console.log(authData);
+    const { Username, FavoriteMovies } = authData.user;
+    this.setState({
+      user: Username,
+      faveoriteMovies: FavoriteMovies || [],
+    });
+
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
     this.getMovies(authData.token);
   }
-
   // add to favorite movies
   addFavorite = (movieId) => {
     const { user } = this.props;
@@ -114,6 +130,7 @@ class MainView extends React.Component {
   render() {
     let { movies } = this.props;
     let { user } = this.state;
+
     return (
       <Router>
         <NavBar user={user} />
@@ -125,13 +142,11 @@ class MainView extends React.Component {
               if (!user)
                 return (
                   <Col>
-                    <LoginView
-                      movies={movies}
-                      onLoggedIn={(user) => this.onLoggedIn(user)}
-                    />
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
-              if (movies.length === 0) return <div className="main-view" />;
+              if (movies.length === 0 && localStorage.getItem("user"))
+                return <div className="main-view" />;
               return <MoviesList movies={movies} />;
             }}
           />
@@ -172,16 +187,15 @@ class MainView extends React.Component {
               if (!user)
                 return (
                   <Col md={8}>
-                    <LoginView
-                      movies={movies}
-                      onLoggedIn={(user) => this.onLoggedIn(user)}
-                    />
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
-              if (movies.length === 0) return <div className="main-view" />;
+              if (movies.length === 0 && localStorage.getItem("user"))
+                return <div className="main-view" />;
               return (
                 <Col md={8}>
                   <MovieView
+                    user={user}
                     movie={movies.find((m) => m._id === match.params.movieId)}
                     addFavorite={this.addFavorite}
                     deleteFavorite={this.deleteFavorite}
@@ -204,7 +218,8 @@ class MainView extends React.Component {
                     />
                   </Col>
                 );
-              if (movies.length === 0) return <div className="main-view" />;
+              if (movies.length === 0 && localStorage.getItem("user"))
+                return <div className="main-view" />;
               return (
                 <Col md={8}>
                   <GenreView
@@ -233,7 +248,8 @@ class MainView extends React.Component {
                     />
                   </Col>
                 );
-              if (movies.length === 0) return <div className="main-view" />;
+              if (movies.length === 0 && localStorage.getItem("user"))
+                return <div className="main-view" />;
               return (
                 <Col md={8}>
                   <DirectorView

@@ -9,7 +9,7 @@ import "./movie-card.scss";
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onMovieClick } = this.props;
+    const { movie } = this.props;
 
     return (
       <Card className="card-movie h-100 d-flex flex-column justify-content-between">

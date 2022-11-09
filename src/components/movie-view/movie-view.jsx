@@ -1,6 +1,4 @@
 import React from "react";
-import axios from "axios";
-import PropTypes from "prop-types";
 import { CardGroup, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -9,7 +7,7 @@ import "./movie-view.scss";
 
 export class MovieView extends React.Component {
   render() {
-    const { movie, onBackClick, addFavorite } = this.props;
+    const { movie, onBackClick } = this.props;
 
     return (
       <Card className="card-top bg-light mb-3">
@@ -89,9 +87,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  deleteFavorite: (event) => dispatch(deleteFavorite(event)),
-  addFavorite: (event) => dispatch(setFavorite(event)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(MovieView);
+export default connect(mapStateToProps)(MovieView);
