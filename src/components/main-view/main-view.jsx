@@ -1,12 +1,6 @@
 import React from "react";
 import axios from "axios";
 
-<<<<<<< Updated upstream
-import { RegistrationView } from "../registration-view/registration-view";
-import { LoginView } from "../login-view/login-view";
-import { MovieCard } from "../movie-card/movie-card";
-import { MovieView } from "../movie-view/movie-view";
-=======
 import { connect } from "react-redux";
 
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
@@ -29,7 +23,6 @@ import { DirectorView } from "../director-view/director-view";
 import { NavBar } from "../navbar/navbar";
 
 import { Row, Col } from "react-bootstrap";
->>>>>>> Stashed changes
 
 import "./main-view.scss";
 
@@ -37,26 +30,11 @@ class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-<<<<<<< Updated upstream
-      movies: [],
-      selectedMovie: null,
       user: null,
-      registered: null,
-=======
-      user: null,
->>>>>>> Stashed changes
     };
   }
 
   componentDidMount() {
-<<<<<<< Updated upstream
-    axios
-      .get("https://seife-myflix.herokuapp.com/movies")
-      .then((response) => {
-        this.setState({
-          movies: response.data,
-        });
-=======
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
       this.setState({
@@ -74,7 +52,6 @@ class MainView extends React.Component {
       })
       .then((res) => {
         this.props.setMovies(res.data);
->>>>>>> Stashed changes
       })
       .catch((error) => {
         console.log(error);
@@ -82,53 +59,6 @@ class MainView extends React.Component {
   }
   /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
 
-<<<<<<< Updated upstream
-  setSelectedMovie(movie) {
-    this.setState({
-      selectedMovie: movie,
-    });
-  }
-
-  /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
-
-  onRegistration(registered) {
-    this.setState({
-      registered,
-    });
-  }
-
-  onLoggedIn(user) {
-    this.setState({
-      user,
-    });
-  }
-  render() {
-    const { movies, selectedMovie, user, registered } = this.state;
-
-    //If register button is clicked, show registration-view
-    if (!registered)
-      return (
-        <RegistrationView
-          onRegistration={(registered) => this.onRegistration(registered)}
-        />
-      );
-
-    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-    if (!user)
-      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
-
-    // Before the movies have been loaded
-    if (movies.length === 0) return <div className="main-view" />;
-
-    return (
-      <div className="main-view">
-        {/*If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all *movies will be returned*/}
-        {selectedMovie ? (
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={(newSelectedMovie) => {
-              this.setSelectedMovie(newSelectedMovie);
-=======
   onLoggedIn(authData) {
     this.props.setUser(authData.user);
     localStorage.setItem("token", authData.token);
@@ -318,26 +248,13 @@ class MainView extends React.Component {
                   />
                 </Col>
               );
->>>>>>> Stashed changes
             }}
           />
-        ) : (
-          movies.map((movie) => (
-            <MovieCard
-              key={movie._id}
-              movie={movie}
-              onMovieClick={(newSelectedMovie) => {
-                this.setSelectedMovie(newSelectedMovie);
-              }}
-            />
-          ))
-        )}
-      </div>
+        </Row>
+      </Router>
     );
   }
 }
-<<<<<<< Updated upstream
-=======
 
 let mapStateToProps = (state) => {
   return {
@@ -352,4 +269,3 @@ export default connect(mapStateToProps, {
   setFavorite,
   deleteFavorite,
 })(MainView);
->>>>>>> Stashed changes

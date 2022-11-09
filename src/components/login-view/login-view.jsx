@@ -1,26 +1,17 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-<<<<<<< Updated upstream
-=======
-import {
-  Form,
-  Button,
-  Card,
-  CardGroup,
-  Container,
-  Col,
-  Row,
-} from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./login-view.scss";
->>>>>>> Stashed changes
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [usernameErr, setUsernameErr] = useState("");
+  const [passwordErr, setPasswordErr] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,29 +22,6 @@ export function LoginView(props) {
   };
 
   return (
-<<<<<<< Updated upstream
-    <form>
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
-    </form>
-=======
     <>
       <Form className="login-form">
         <h1 className="login-header mt-4">Login</h1>
@@ -100,20 +68,11 @@ export function LoginView(props) {
         </Link>
       </Form>
     </>
->>>>>>> Stashed changes
   );
 }
 LoginView.propTypes = {
-<<<<<<< Updated upstream
-  user: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-  }),
-  onLoggedIn: PropTypes.func.isRequired,
-=======
   username: PropTypes.string,
   password: PropTypes.string,
->>>>>>> Stashed changes
 };
 
 const mapDispatchToProps = (dispatch) => ({

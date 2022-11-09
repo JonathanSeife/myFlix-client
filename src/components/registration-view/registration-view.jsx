@@ -18,45 +18,6 @@ export function RegistrationView(props) {
   };
 
   return (
-<<<<<<< Updated upstream
-    <form>
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <label>
-        Birthday:
-        <input
-          type="date"
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
-        />
-      </label>
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
-    </form>
-=======
     <>
       <Form className="registration-form">
         <h1 className="registration-header mt-4">Registration</h1>
@@ -115,17 +76,12 @@ export function RegistrationView(props) {
         </Button>
       </Form>
     </>
->>>>>>> Stashed changes
   );
 }
 
 RegistrationView.propTypes = {
-<<<<<<< Updated upstream
-  onRegistration: PropTypes.func.isRequired,
-=======
   username: PropTypes.string,
   password: PropTypes.string,
   email: PropTypes.string,
   birthday: PropTypes.number,
->>>>>>> Stashed changes
 };
