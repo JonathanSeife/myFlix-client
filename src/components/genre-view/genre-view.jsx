@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Button, Card, Col } from "react-bootstrap";
+import { Row, Button, Card, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
