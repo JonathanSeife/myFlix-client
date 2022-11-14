@@ -42765,7 +42765,7 @@ function LoginView(props) {
             className: "login-form",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    className: "login-header mt-4",
+                    className: "login-header mt-4 text-white",
                     children: "Login"
                 }, void 0, false, {
                     fileName: "src/components/login-view/login-view.jsx",
