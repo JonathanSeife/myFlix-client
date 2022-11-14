@@ -66,7 +66,7 @@ export function RegistrationView(props) {
     }
   };
   return (
-    <>
+    <div className="registration-container">
       <Form className="registration-form">
         <h1 className="registration-header mt-4 text-white">Registration</h1>
         <Form.Group>
@@ -122,7 +122,7 @@ export function RegistrationView(props) {
           Submit
         </Button>
       </Form>
-    </>
+    </div>
   );
 }
 

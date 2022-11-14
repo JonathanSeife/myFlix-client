@@ -1,7 +1,6 @@
 
 
 .login-container {
-  width: 100vw;
   height: 100vh;
 }
 
@@ -14,9 +13,17 @@
   padding-top: 20px;
 }
 
+.movieview-container {
+  height: 100vh;
+}
+
 .movie-title, .movie-description, .director-bio, .director-born {
   font-size: 18px;
   font-weight: bold;
+}
+
+.registration-container {
+  height: 100vh;
 }
 
 .registration-form {
@@ -76,6 +83,10 @@
 
 .btn-space {
   margin-top: 15px;
+}
+
+.directorview-container {
+  height: 100vh;
 }
 
 .card-top {

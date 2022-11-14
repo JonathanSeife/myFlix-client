@@ -56,7 +56,7 @@ export function LoginView(props) {
   };
   return (
     <div className="login-container">
-      <Form className="login-form">
+      <Form className="login-form ce">
         <h1 className="login-header mt-4 text-white">Login</h1>
         <Form.Group controlId="formUsername">
           <Form.Label className="text-white">Username:</Form.Label>
