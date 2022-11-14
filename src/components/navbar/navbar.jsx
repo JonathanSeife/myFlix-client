@@ -21,7 +21,7 @@ export function NavBar({ user }) {
     }
   };
   return (
-    <Navbar className="navbar fixed-top navbar-expand-lg navbar-dark">
+    <Navbar className="navbar navbar-expand-lg navbar-dark">
       <Container>
         <Navbar.Brand className="navbar-logo" as={Link} to="/">
           MyFlix

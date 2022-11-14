@@ -44367,7 +44367,7 @@ function NavBar({ user  }) {
         else return false;
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
-        className: "navbar fixed-top navbar-expand-lg navbar-dark",
+        className: "navbar navbar-expand-lg navbar-dark",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Brand, {
