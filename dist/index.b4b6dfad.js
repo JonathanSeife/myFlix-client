@@ -43589,7 +43589,7 @@ function ProfileView({ user , movies , deleteFavorite: deleteFavorite1 , favorit
             className: "profile-card",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Header, {
-                    className: "bg-secondary text-center text-light",
+                    className: "bg-dark text-center text-white",
                     as: "h3",
                     children: "Profile"
                 }, void 0, false, {
@@ -43871,7 +43871,7 @@ function ProfileView({ user , movies , deleteFavorite: deleteFavorite1 , favorit
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Footer, {
-                    className: "bg-secondary text-right",
+                    className: "bg-dark text-right",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         className: "btn btn-danger",
                         variant: "secondary",

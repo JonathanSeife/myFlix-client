@@ -116,7 +116,7 @@ export function ProfileView({
   return (
     <Container className="profile-container">
       <Card className="profile-card">
-        <Card.Header className="bg-secondary text-center text-light" as="h3">
+        <Card.Header className="bg-dark text-center text-white" as="h3">
           Profile
         </Card.Header>
         <Card.Body>
@@ -228,7 +228,7 @@ export function ProfileView({
             ))}
           </CardGroup>
         </Card.Body>
-        <Card.Footer className="bg-secondary text-right">
+        <Card.Footer className="bg-dark text-right">
           <Button
             className="btn btn-danger"
             variant="secondary"
