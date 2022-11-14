@@ -11,7 +11,7 @@ export function DirectorView({ movies, director, onBackClick }) {
   return (
     <div className="directorview-container">
       <Card className="card-top bg-light mb-3">
-        <Card.Header className="bg-secondary text-center text-light" as="h3">
+        <Card.Header className="bg-dark text-center text-white" as="h3">
           {director.Name}
         </Card.Header>
         <Card bg="light" border="dark" text="dark">
@@ -51,7 +51,7 @@ export function DirectorView({ movies, director, onBackClick }) {
             </CardGroup>
           </Card.Body>
         </Card>
-        <Card.Footer className="bg-secondary text-right">
+        <Card.Footer className="bg-dark text-right">
           <Button
             className="btn btn-danger"
             variant="secondary"

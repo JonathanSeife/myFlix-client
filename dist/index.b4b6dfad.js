@@ -42938,7 +42938,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                 className: "card-top bg-light mb-3",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Header, {
-                        className: "bg-secondary text-center",
+                        className: "bg-dark text-center text-white",
                         as: "h3",
                         children: [
                             movie.Title,
@@ -43147,7 +43147,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Footer, {
-                        className: "bg-secondary text-right",
+                        className: "bg-dark text-right",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: `/directors/${movie.Director.Name}`,
@@ -43953,7 +43953,7 @@ function GenreView({ genre , movies , onBackClick  }) {
             className: "card-top bg-light mb-3",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Header, {
-                    className: "bg-secondary text-center text-light",
+                    className: "bg-dark text-center text-white",
                     as: "h3",
                     children: genre.Name
                 }, void 0, false, {
@@ -44088,7 +44088,7 @@ function GenreView({ genre , movies , onBackClick  }) {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Footer, {
-                    className: "bg-secondary text-right",
+                    className: "bg-dark text-right",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         className: "btn btn-danger",
                         onClick: ()=>{
@@ -44158,7 +44158,7 @@ function DirectorView({ movies , director , onBackClick  }) {
             className: "card-top bg-light mb-3",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Header, {
-                    className: "bg-secondary text-center text-light",
+                    className: "bg-dark text-center text-white",
                     as: "h3",
                     children: director.Name
                 }, void 0, false, {
@@ -44293,7 +44293,7 @@ function DirectorView({ movies , director , onBackClick  }) {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Footer, {
-                    className: "bg-secondary text-right",
+                    className: "bg-dark text-right",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         className: "btn btn-danger",
                         variant: "secondary",
@@ -44367,7 +44367,7 @@ function NavBar({ user  }) {
         else return false;
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
-        className: "navbar fixed-top navbar-expand-lg navbar-dark bg-dark",
+        className: "navbar fixed-top navbar-expand-lg navbar-dark",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Brand, {

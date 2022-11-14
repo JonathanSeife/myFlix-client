@@ -9,7 +9,7 @@ export function GenreView({ genre, movies, onBackClick }) {
   return (
     <div className="genreview-container">
       <Card className="card-top bg-light mb-3">
-        <Card.Header className="bg-secondary text-center text-light" as="h3">
+        <Card.Header className="bg-dark text-center text-white" as="h3">
           {genre.Name}
         </Card.Header>
         <Card bg="light" border="dark" text="dark">
@@ -49,7 +49,7 @@ export function GenreView({ genre, movies, onBackClick }) {
             </Row>
           </Card.Body>
         </Card>
-        <Card.Footer className="bg-secondary text-right">
+        <Card.Footer className="bg-dark text-right">
           <Button
             className="btn btn-danger"
             onClick={() => {

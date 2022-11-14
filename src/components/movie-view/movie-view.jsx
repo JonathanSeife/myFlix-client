@@ -12,7 +12,7 @@ export class MovieView extends React.Component {
     return (
       <div className="movieview-container">
         <Card className="card-top bg-light mb-3">
-          <Card.Header className="bg-secondary text-center" as="h3">
+          <Card.Header className="bg-dark text-center text-white" as="h3">
             {movie.Title}
             <Button
               className="btn btn-danger float-right"
@@ -55,7 +55,7 @@ export class MovieView extends React.Component {
               </Card.Body>
             </Card>
           </CardGroup>
-          <Card.Footer className="bg-secondary text-right">
+          <Card.Footer className="bg-dark  text-right">
             <Link to={`/directors/${movie.Director.Name}`}>
               <Button className="btn btn-danger mt-2 ml-2" variant="primary">
                 Director's Page
