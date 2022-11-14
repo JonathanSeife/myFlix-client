@@ -20,7 +20,7 @@ class MyFlixApplication extends React.Component {
     return (
       <Provider store={store}>
         <div className="screen">
-          <Container fluid>
+          <Container>
             <MainView />
           </Container>
         </div>
