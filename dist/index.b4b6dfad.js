@@ -42760,7 +42760,8 @@ function LoginView(props) {
             setIsWrong(true);
         });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "login-container",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
             className: "login-form",
             children: [
@@ -42776,6 +42777,7 @@ function LoginView(props) {
                     controlId: "formUsername",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            className: "text-white",
                             children: "Username:"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
@@ -42810,6 +42812,7 @@ function LoginView(props) {
                     controlId: "formPassword",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            className: "text-white",
                             children: "Password"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
@@ -42885,7 +42888,11 @@ function LoginView(props) {
             lineNumber: 59,
             columnNumber: 7
         }, this)
-    }, void 0, false);
+    }, void 0, false, {
+        fileName: "src/components/login-view/login-view.jsx",
+        lineNumber: 58,
+        columnNumber: 5
+    }, this);
 }
 _s(LoginView, "aaL9VxYb9bzcYSosIOrqR8RJSEU=");
 _c = LoginView;
@@ -43293,7 +43300,7 @@ function RegistrationView(props) {
             className: "registration-form",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    className: "registration-header mt-4",
+                    className: "registration-header mt-4 text-white",
                     children: "Registration"
                 }, void 0, false, {
                     fileName: "src/components/registration-view/registration-view.jsx",
@@ -43303,6 +43310,7 @@ function RegistrationView(props) {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            className: "text-white",
                             children: "Username:"
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",
@@ -43337,6 +43345,7 @@ function RegistrationView(props) {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            className: "text-white",
                             children: "Password:"
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",
@@ -43372,6 +43381,7 @@ function RegistrationView(props) {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            className: "text-white",
                             children: "Email:"
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",
@@ -43406,6 +43416,7 @@ function RegistrationView(props) {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            className: "text-white",
                             children: "Birthdate:"
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",

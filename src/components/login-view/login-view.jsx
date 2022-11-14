@@ -55,11 +55,11 @@ export function LoginView(props) {
     }
   };
   return (
-    <>
+    <div className="login-container">
       <Form className="login-form">
         <h1 className="login-header mt-4 text-white">Login</h1>
         <Form.Group controlId="formUsername">
-          <Form.Label>Username:</Form.Label>
+          <Form.Label className="text-white">Username:</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter your username"
@@ -71,7 +71,7 @@ export function LoginView(props) {
         </Form.Group>
 
         <Form.Group controlId="formPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label className="text-white">Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Password"
@@ -106,7 +106,7 @@ export function LoginView(props) {
           E-mail and/or password entered is incorrect.
         </p>
       </Form>
-    </>
+    </div>
   );
 }
 LoginView.propTypes = {

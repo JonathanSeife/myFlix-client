@@ -1,5 +1,10 @@
 
 
+.login-container {
+  width: 100vw;
+  height: 100vh;
+}
+
 .login-form {
   max-width: 450px;
   margin: auto;
